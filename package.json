@@ -1,0 +1,6 @@
+            <div class="current-details">
+              <div id="current-humidity">Humidity: <strong>87%</strong></div>
+              <div id="current-wind">Wind: <strong>7.2 km/h</strong></div>
+              <div id="current-rain">Rain: <strong>60%</strong></div>
+              <div>Cloudiness: <strong>75%</strong></div>
+            </div>

@@ -11,7 +11,7 @@ function search(event) {
   let searchInputElement = document.querySelector("#search-input");
   let city = searchInputElement.value;
 
-  let apiKey = "b2a5adcct04b33178913oc335f405433";
+  let apiKey = "097tobe889c8b3ef74487a6e720a70b1";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(displayTemperature);
@@ -20,7 +20,7 @@ function search(event) {
 function formatDate(date) {
   let minutes = date.getMinutes();
   let hours = date.getHours();
-  let day = date.getDay();
+  let day = date.getDate(); // Use getDate() to get the day of the month
 
   if (minutes < 10) {
     minutes = `0${minutes}`;
@@ -40,9 +40,10 @@ function formatDate(date) {
     "Saturday"
   ];
 
-  let formattedDay = days[day];
+  let formattedDay = days[date.getDay()]; // Use getDay() for the day of the week
   return `${formattedDay} ${hours}:${minutes}`;
 }
+
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
